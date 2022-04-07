@@ -1,9 +1,13 @@
 import React from 'react';
-import './Login.css';
+import './Registation.css';
 
-const Login = () => {
+const Registation = () => {
     const clickSubmit = event => {
         event.preventDefault();
+    }
+
+    const clickName = event => {
+        console.log(event.target.value);
     }
 
     const clickEmail = event => {
@@ -15,10 +19,13 @@ const Login = () => {
 
     }
     return (
-
         <div className="main-details">
-            <h2 className='header'>Login</h2>
+            <h2 className='header'>Registrations</h2>
             <form onClick={clickSubmit} >
+                <div className='info'>
+                    <label >Name</label><br />
+                    <input onBlur={clickName} type="text" placeholder='Pleace inter your Name' required />
+                </div>
                 <div className='info'>
                     <label >Email</label><br />
                     <input onBlur={clickEmail} type="email" placeholder='Pleace inter your Email' required />
@@ -32,8 +39,7 @@ const Login = () => {
                 <button className='registrations'>Registrations</button>
             </form>
         </div>
-
     );
 };
 
-export default Login;
+export default Registation;
